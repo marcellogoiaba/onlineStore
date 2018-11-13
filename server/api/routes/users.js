@@ -42,6 +42,19 @@ router.get('/', (req, res, next) => {
     })
 })
 
+router.get('/:id', (req, res, next) => {
+   User.findById(req.params.id, (err, user) => {
+      if(err){
+         res.json({
+            message: err
+         })
+      }
+      else{
+         res.json({content:user})
+      }
+   })
+})
+
 router.delete('/:id', (req, res) => {
    User.findById(req.params.id, (err, user) => {
       if(err){
