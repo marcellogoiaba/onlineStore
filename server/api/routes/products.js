@@ -22,6 +22,47 @@ router.get('/:id', (req, res, next) => {
     })
  })
 
+ router.put('/:id', (req, res, next) => {
+    Product.findById(req.params.id, (err, product) => {
+        if (err) {
+            res.status(404);
+            res.send({message: 'Product not found'});
+        } else{
+            console.log(req.body);
+            product.set(req.body);
+ 
+            product.save((err, product) => {
+                console.log(product);
+ 
+              res.json({content:product});
+            });
+        }
+    })
+ })
+
+ router.delete('/:id', (req, res, next) => {
+    Product.findById(req.params.id, (err, product) => {
+       if(err){
+          res.json({
+             message: err
+          })
+       }
+       else{
+          Product.remove({
+              _id: req.params.id
+          }, (err, user) => {
+              if(err) {
+                  res.json({message: err})
+              }
+              else{
+                res.status(200).json({
+                    message: 'Item deleted successfully'
+                })  
+              }
+          })
+       }
+    })
+ })
 
 router.post('/add', (req, res, next) => {
     console.log(req.body);
