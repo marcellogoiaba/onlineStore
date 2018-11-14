@@ -1,16 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./styles/fonts";
+@import "./styles/colours";
 * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    
 }
 html,
 body{
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
     font-family: 'Raleway-Regular' !important;
+    background: $mintGreen;
 }
-
+.clearfix{zoom: 1}
+.clearfix:after{
+    content: ' ';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
 
