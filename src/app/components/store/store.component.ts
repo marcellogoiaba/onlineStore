@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-store',

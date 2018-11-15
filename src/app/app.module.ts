@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreComponent } from './components/store/store.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     NavbarComponent,
     StoreComponent,
     ContactComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

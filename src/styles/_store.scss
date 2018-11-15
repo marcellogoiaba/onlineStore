@@ -1,0 +1,25 @@
+@import './colours';
+.app-container{
+    height: calc(100vh - 60px);
+    width: 100%;
+    background: $mintGreen;
+    padding: 30px;
+}
+.polaroid-frame{
+    content: '';
+    background: #ffffff;
+    width: 100%;
+}
+.polaroid-frame::before{
+    content: '';
+    display: block;
+    padding-top: 114%;
+}
+.image-box{
+    position: absolute;
+    top:0;
+    padding: 20px;
+    img{
+        width: calc(100% - 20px);
+    }
+}
