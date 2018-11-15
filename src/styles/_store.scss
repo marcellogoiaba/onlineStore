@@ -4,16 +4,25 @@
     width: 100%;
     background: $mintGreen;
     padding: 0 30px 30px 30px;
+    overflow: overlay;
 }
 .polaroid-frame{
     content: '';
     background: #ffffff;
     width: 100%;
+    transition: ease all .4s;
+    border: 4px solid transparent;
+    margin-bottom: 30px;
 }
 .polaroid-frame::before{
     content: '';
     display: block;
     padding-top: 114%;
+    
+}
+.polaroid-frame:hover{
+    cursor: pointer;
+    border: 4px solid $sevilleOrange;
 }
 .image-box{
     position: absolute;
