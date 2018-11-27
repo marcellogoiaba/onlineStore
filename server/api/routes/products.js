@@ -77,7 +77,9 @@ router.post('/add', (req, res, next) => {
             itemName : req.body.itemName,
             description: req.body.description,
             price: req.body.price,
-            quantity: req.body.quantity
+            quantity: req.body.quantity,
+            mainPhoto: req.body.mainPhoto,
+            secondaryPhoto: req.body.secondaryPhoto
         });
         newProduct.save((err) => {
             if(err){

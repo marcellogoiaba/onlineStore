@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Router } from "@angular/router";
+import { Product } from '../models/product.model';
+import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -8,18 +9,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
 
-  constructor( 
-    protected router: Router,
-    private http: HttpClient
-  ) { }
+  products: Product[] = [];
+  private url: string = 'http://localhost:3000/products/';
 
-  ngOnInit(){
-   
+  constructor(private http: HttpClient){ }
+
+  getProducts(): Observable<Product[]>{
+    return this.http.get<Product[]>(this.url)
   }
-  public getAllProducts(){
-    let obs = this.http.get('http://localhost:3000/products');
-    obs.subscribe(() => {
-      console.log('Got the response')
-    })
-  }
+ 
 }

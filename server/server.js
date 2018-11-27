@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 const app = express();
+const cors = require('cors');
 const mongodb = require('mongodb');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -13,7 +14,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open',  () => {
   console.log('connected with mongodb');
 });
-
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
