@@ -4,12 +4,15 @@ import { StoreComponent } from '../app/components/store/store.component';
 import { ProductDetailComponent } from '../app/components/product-detail/product-detail.component';
 import { ContactComponent } from '../app/components/contact/contact.component';
 import { GalleryComponent } from '../app/components/gallery/gallery.component';
+import { AdminComponent } from  '../app/components/admin/admin.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/store', pathMatch: 'full' },
   { path: 'store', component: StoreComponent },
   { path: 'productDetail', component: ProductDetailComponent },
   { path: 'contact' , component: ContactComponent},
-  { path: 'gallery' , component: GalleryComponent}
+  { path: 'gallery' , component: GalleryComponent},
+  { path: 'admin' , component: AdminComponent}
 ];
 
 @NgModule({
