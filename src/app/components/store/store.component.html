@@ -6,7 +6,7 @@
     <div class="col-md-3 col-sm-4" *ngFor="let item of products">
       <div class="polaroid-frame ">
         <div class="image-box clearfix">
-            <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="">
+            <img src="{{item.mainPhoto}}" alt="">
         </div>
         <div class="product-name">
           {{item.itemName}}
