@@ -9,8 +9,10 @@ import { Product } from '../../models/product.model';
 })
 export class AdminComponent implements OnInit {
 
-  
-
+  imgUrl: String = 'https://cdn0.iconfinder.com/data/icons/material-style/48/share_ios-512.png';
+  imgUrl2: String = 'https://cdn0.iconfinder.com/data/icons/material-style/48/share_ios-512.png';
+  imgToUpload: File = null;
+  imgToUpload2: File = null;
   newProduct: Product;
   constructor( private productService: ProductService) { }
 
@@ -31,6 +33,26 @@ export class AdminComponent implements OnInit {
   //   }
   // }
 
+ 
+  handleFileInput(file: FileList){
+    this.imgToUpload = file.item(0);
+
+    let reader = new FileReader();
+    reader.onload = (event:any) => {
+      this.imgUrl = event.target.result;
+    }
+    reader.readAsDataURL(this.imgToUpload);
+  }
+  
+  handleFileInput2(file: FileList){
+    this.imgToUpload2 = file.item(0);
+
+    let reader = new FileReader();
+    reader.onload = (event:any) => {
+      this.imgUrl2 = event.target.result;
+    }
+    reader.readAsDataURL(this.imgToUpload2);
+  }
 
   addNewProduct(form){
     console.log(form)
@@ -39,6 +61,7 @@ export class AdminComponent implements OnInit {
     ,form.value.mainPhoto
     ,form.value.price
     ,form.value.quantity
+    ,form.value.primaryphoto
     ,form.value.secondaryPhoto).subscribe(response =>{
       console.log(response)
     })

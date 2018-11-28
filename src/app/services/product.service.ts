@@ -37,7 +37,8 @@ export class ProductService {
         mainPhoto: string,
         price: number,
         quantity: number,
-        secondaryPhoto: string): Observable<Product[]>{
+        primaryPhoto: FormData,
+        secondaryPhoto: FormData): Observable<Product[]>{
 
 
     let jsonBody = {
@@ -46,6 +47,7 @@ export class ProductService {
       mainPhoto,
       price,
       quantity,
+      primaryPhoto,
       secondaryPhoto
 
     }

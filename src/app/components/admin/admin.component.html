@@ -1,7 +1,7 @@
 <div class="app-container padding-top">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-6 offset-3">
         <form #addProduct="ngForm">
           <div class="form-group">
             <label for="itemName">Product Name</label>
@@ -24,12 +24,19 @@
             <input  id="quantity" required ngModel name="quantity" #quantity="ngModel"  type="number" class="form-control">
           </div>
           <div class="form-group">
-            <label for="Quantity">Product Main Photo</label> <br>
-            <input id="mainPhoto"  ngModel name="mainPhoto" #mainPhoto="ngModel" type="file">
+            <img class="demoImg" src="{{imgUrl}}" alt="">
+            <label for="mainPhoto" class="custom-file-upload">
+              Click here to upload the main image
+            </label>
+            <input id="mainPhoto" ngModel name="mainPhoto" (change)="handleFileInput($event.target.files)"  accept="image/*" #mainPhoto="ngModel" type="file">
+          
           </div>
           <div class="form-group">
-            <label for="Quantity">Product Secondary Photo</label> <br>
-            <input  id="secondaryPhoto" ngModel name="secondaryPhoto" #secondaryPhoto="ngModel" type="file">
+            <img class="demoImg" src="{{imgUrl2}}" alt="">
+            <label for="secondaryPhoto" class="custom-file-upload">
+                Click here to upload a secondary image
+            </label>
+            <input  id="secondaryPhoto" ngModel name="secondaryPhoto" (change)="handleFileInput2($event.target.files)"  accept="image/*" #secondaryPhoto="ngModel" type="file">
           </div>
           <button type="submit" (click)="addNewProduct(addProduct.form)" class="btn btn-primary col-sm-12">Submit</button>
         </form>
