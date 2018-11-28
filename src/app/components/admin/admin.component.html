@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <form>
+        <form #addProduct="ngForm">
           <div class="form-group">
             <label for="itemName">Product Name</label>
-            <input  id="itemName" required minlength="3" maxlength="30" ngModel name="itemName" #itemName="ngModel" (change)="log(itemName)" type="text" class="form-control">
+            <input  id="itemName" required minlength="3" maxlength="30" ngModel name="itemName" #itemName="ngModel" type="text" class="form-control">
             <div class="alert alert-danger" *ngIf="itemName.touched && !itemName.valid">
               <div *ngIf="itemName.errors.required">Product name is required</div>
               <div *ngIf="itemName.errors.minlength">Product name should have at least 3 characters</div>
@@ -31,7 +31,7 @@
             <label for="Quantity">Product Secondary Photo</label> <br>
             <input  id="secondaryPhoto" ngModel name="secondaryPhoto" #secondaryPhoto="ngModel" type="file">
           </div>
-          <button type="submit" (click)="saveProduct()" class="btn btn-primary col-sm-12">Submit</button>
+          <button type="submit" (click)="addNewProduct(addProduct.form)" class="btn btn-primary col-sm-12">Submit</button>
         </form>
       </div>
     </div>

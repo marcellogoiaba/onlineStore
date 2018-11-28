@@ -19,8 +19,7 @@ let productSchema = new Schema({
         required: true
     },
     mainPhoto: {
-        type: String,
-        required: true
+        type: String
     },
     secondaryPhoto: {
         type: String

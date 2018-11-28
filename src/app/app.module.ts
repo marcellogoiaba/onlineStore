@@ -10,6 +10,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ProductService } from './services/product.service';
+import { Product } from './models/product.model';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { AdminComponent } from './components/admin/admin.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    Product,
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
